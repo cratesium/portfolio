@@ -351,6 +351,10 @@ body.dark-theme {
   display: flex;
   column-gap: 1.25rem;
 }
+.lc{
+  width: 23px;
+  height: 23px;
+}
 .home__social-link{
   font-size: 1.25rem;
   color: var(--text-color-light);
