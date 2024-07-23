@@ -305,9 +305,11 @@ body.dark-theme {
 }
 .home__blob{
   position: relative;
-  width: 200px;
-  height: 290px;
+  /* width: 200px;
+  height: 290px; */
   background-color: var(--body-color);
+  width: 200px;
+  height: 200px;
   border: 2px solid var(--text-color-light);
   justify-self: center;
   border-radius: 6.25rem;
@@ -318,6 +320,7 @@ body.dark-theme {
   width: 170px;
   height: 260px;
   background: var(--gradient-color);
+ 
   border-radius: 5.5rem;
   overflow: hidden;
   display: flex;
