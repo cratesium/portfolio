@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shikhar Pratap Singh - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .project {
+            cursor: pointer;
+            color: #1a73e8;
+            text-decoration: underline;
+        }
+        .project:hover {
+            color: #0056b3;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #1a73e8;
+        }
+    </style>
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shikhar Pratap Singh</h1>
+            <p><strong>Final Year B.Tech Computer Science | ABES Engineering College | CGPA: 8.0/10</strong></p>
+            <p>Email: <a href="mailto:shikharpsingh1@gmail.com">shikharpsingh1@gmail.com</a> | Phone: +91 9015061999</p>
+            <p>Portfolio: <a href="https://shikharpratapsinghportfolio.netlify.app">Visit Portfolio</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/shikhar-pratap-singh-09a9b322a/">LinkedIn Profile</a> | GitHub: <a href="https://github.com/cratesium">GitHub Profile</a></p>
+        </header>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Java, C++, SQL</li>
+                <li><strong>Backend Development:</strong> Spring Boot, MongoDB, RESTful APIs</li>
+                <li><strong>Frontend Development:</strong> React.js, HTML, CSS, JavaScript</li>
+                <li><strong>Testing & Tools:</strong> JUnit, Git, SDLC</li>
+                <li><strong>Methodologies & Platforms:</strong> Agile, AWS (basic exposure)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Relevant Projects</h2>
+            <ul>
+                <li>
+                    <span class="project" onclick="toggleDetails('project1')">Indus-Talk</span>
+                    <div id="project1" class="details">
+                        A full-stack messaging platform using React.js, Spring Boot, and SQL. Features real-time communication, authentication, and secure database interactions for seamless user experience.
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project2')">Journal App</span>
+                    <div id="project2" class="details">
+                        A personal journal system developed with MongoDB, React.js, and Spring Boot. Allows users to create, read, update, and delete entries with a dynamic and user-friendly interface.
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project3')">Stock Trading Platform</span>
+                    <div id="project3" class="details">
+                        A backend trading system built using Java and Spring Boot. Implements functionalities like transaction processing, reporting, and automated trading workflows.
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project4')">ChatBot Application</span>
+                    <div id="project4" class="details">
+                        A Spring Boot-based chatbot integrated with Gemini API. Handles real-time interactions and retrieves information efficiently.
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project5')">Student Grading Platform</span>
+                    <div id="project5" class="details">
+                        A CLI-based application developed in Core Java to calculate grades and SGPA for students. Demonstrates problem-solving and backend processing skills.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Java Intern at Code Alpha (May 2024 - August 2024):</strong> Developed student grading systems and backend trading platforms using Java and Spring Boot.</li>
+                <li><strong>Freelancing & Open Source Contributions (July 2024 - Present):</strong> Delivered web solutions using Spring Boot, HTML, CSS, and JavaScript.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Problem Solving (Intermediate) – HackerRank</li>
+                <li>Java SE 8 – Infosys Springboard</li>
+                <li>Introduction to Frontend – Meta</li>
+                <li>Getting Started with Java 11 – LinkedIn Learning</li>
+                <li>Programming Essentials in C++ – OpenEDG</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Solved over 300+ problems on HackerRank and LeetCode.</li>
+                <li>Participated in multiple coding competitions.</li>
+                <li>ACM Core Member and Camp Coordinator at LDL NGO.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Exploring Geopolitics, Teaching, and Problem-Solving Challenges.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
