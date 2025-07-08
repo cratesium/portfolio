@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
         }
         .container {
             max-width: 900px;
@@ -22,6 +23,7 @@
         }
         h1, h2, h3 {
             color: #444;
+            word-wrap: break-word;
         }
         a {
             color: #1a73e8;
@@ -31,20 +33,27 @@
             text-decoration: underline;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .section h2 {
             border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
+            margin-bottom: 15px;
         }
         ul {
             list-style-type: square;
             padding-left: 20px;
         }
+        li {
+            margin-bottom: 8px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
         .project {
             cursor: pointer;
             color: #1a73e8;
             text-decoration: underline;
+            word-wrap: break-word;
         }
         .project:hover {
             color: #0056b3;
@@ -53,8 +62,88 @@
             display: none;
             margin-top: 10px;
             background-color: #f9f9f9;
-            padding: 10px;
+            padding: 15px;
             border-left: 3px solid #1a73e8;
+            border-radius: 4px;
+            word-wrap: break-word;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #1a73e8;
+        }
+        .experience-title {
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+        .experience-company {
+            font-weight: bold;
+            color: #333;
+        }
+        .experience-date {
+            color: #666;
+            font-style: italic;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #1a73e8;
+        }
+        .skill-category h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a73e8;
+        }
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .skill-level {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #1a73e8;
+        }
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <script>
@@ -68,92 +157,308 @@
     <div class="container">
         <header>
             <h1>Shikhar Pratap Singh</h1>
-            <p><strong>Final Year B.Tech Computer Science | ABES Engineering College | CGPA: 8.0/10</strong></p>
+            <p><strong>Software Development Engineer | B.Tech Computer Science</strong></p>
             <p>Email: <a href="mailto:shikharpsingh1@gmail.com">shikharpsingh1@gmail.com</a> | Phone: +91 9015061999</p>
-            <p>Portfolio: <a href="https://shikharpratapsinghportfolio.netlify.app">Visit Portfolio</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/shikhar-pratap-singh-09a9b322a/">LinkedIn Profile</a> | GitHub: <a href="https://github.com/cratesium">GitHub Profile</a></p>
         </header>
 
         <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> Java, C++, SQL</li>
-                <li><strong>Backend Development:</strong> Spring Boot, MongoDB, RESTful APIs</li>
-                <li><strong>Frontend Development:</strong> React.js, HTML, CSS, JavaScript</li>
-                <li><strong>Testing & Tools:</strong> JUnit, Git, SDLC</li>
-                <li><strong>Methodologies & Platforms:</strong> Agile, AWS (basic exposure)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Relevant Projects</h2>
-            <ul>
-                <li>
-                    <span class="project" onclick="toggleDetails('project1')">Indus-Talk</span>
-                    <div id="project1" class="details">
-                        A full-stack messaging platform using React.js, Spring Boot, and SQL. Features real-time communication, authentication, and secure database interactions for seamless user experience.
-                    </div>
-                </li>
-                <li>
-                    <span class="project" onclick="toggleDetails('project2')">Journal App</span>
-                    <div id="project2" class="details">
-                        A personal journal system developed with MongoDB, React.js, and Spring Boot. Allows users to create, read, update, and delete entries with a dynamic and user-friendly interface.
-                    </div>
-                </li>
-                <li>
-                    <span class="project" onclick="toggleDetails('project3')">Stock Trading Platform</span>
-                    <div id="project3" class="details">
-                        A backend trading system built using Java and Spring Boot. Implements functionalities like transaction processing, reporting, and automated trading workflows.
-                    </div>
-                </li>
-                <li>
-                    <span class="project" onclick="toggleDetails('project4')">ChatBot Application</span>
-                    <div id="project4" class="details">
-                        A Spring Boot-based chatbot integrated with Gemini API. Handles real-time interactions and retrieves information efficiently.
-                    </div>
-                </li>
-                <li>
-                    <span class="project" onclick="toggleDetails('project5')">Student Grading Platform</span>
-                    <div id="project5" class="details">
-                        A CLI-based application developed in Core Java to calculate grades and SGPA for students. Demonstrates problem-solving and backend processing skills.
-                    </div>
-                </li>
-            </ul>
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="experience-title">B.Tech in Computer Science</div>
+                <div class="experience-company">ABES Engineering College</div>
+                <div class="experience-date">2021 – 2025</div>
+                <p><strong>CGPA:</strong> 8.1/10 (till 7th semester)</p>
+                <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Management System, Operating System, Computer Networks, Software Engineering, Object Oriented System Design</p>
+            </div>
         </div>
 
         <div class="section">
             <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="experience-title">Software Development Engineer</div>
+                <div class="experience-company">Paytm</div>
+                <div class="experience-date">June 2025 – Present</div>
+                <ul>
+                    <li>Working on enterprise-level backend systems and microservices architecture</li>
+                    <li>Developing scalable applications using SpringBoot, MySQL, ELK Stack, Grafana, AWS, Prometheus, Redis</li>
+                    <li>Implementing robust testing frameworks with JUnit and Mockito</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Software Development Intern</div>
+                <div class="experience-company">Paytm</div>
+                <div class="experience-date">March 2025 – June 2025</div>
+                <ul>
+                    <li>Gained hands-on experience in SpringBoot development and RESTful API design</li>
+                    <li>Collaborated with cross-functional teams on feature development and code optimization</li>
+                    <li>Acquired expertise in enterprise-level software development practices and agile methodologies</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Freelance Developer & Open Source Contributor</div>
+                <div class="experience-date">2023 – 2024</div>
+                <ul>
+                    <li>Delivered custom software solutions for small businesses and startups using Java and SpringBoot</li>
+                    <li>Contributed to open-source projects focusing on backend development and API optimization</li>
+                    <li>Mentored junior developers and provided technical consultation on system architecture</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
             <ul>
-                <li><strong>Java Intern at Code Alpha (May 2024 - August 2024):</strong> Developed student grading systems and backend trading platforms using Java and Spring Boot.</li>
-                <li><strong>Freelancing & Open Source Contributions (July 2024 - Present):</strong> Delivered web solutions using Spring Boot, HTML, CSS, and JavaScript.</li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project1')">Field Sales Agent (FSM) Project</span>
+                    <span class="highlight">Current</span>
+                    <div id="project1" class="details">
+                        <strong>Description:</strong> Enterprise field sales management system for tracking and managing sales agent activities and performance<br>
+                        <strong>Features:</strong> Implemented using microservices architecture with real-time monitoring, analytics, and reporting dashboards<br>
+                        <strong>Technologies:</strong> SpringBoot, MySQL, AWS, ELK Stack, Grafana, Prometheus, Redis
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project2')">Journal App</span>
+                    <span class="highlight">Aug 2024 – Present</span>
+                    <div id="project2" class="details">
+                        <strong>Description:</strong> Personal journal application with secure user authentication, data encryption, and seamless user experience<br>
+                        <strong>Features:</strong> Rich text editing, categorization, search functionality, and cloud synchronization<br>
+                        <strong>Technologies:</strong> Java, SpringBoot, MongoDB, React, JWT Authentication
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project3')">Indus-Talk</span>
+                    <span class="highlight">June 2023 – Present</span>
+                    <div id="project3" class="details">
+                        <strong>Description:</strong> Full-stack real-time chat application with message routing, user authentication, and responsive design<br>
+                        <strong>Features:</strong> WebSocket for real-time communication, group chats, and file sharing<br>
+                        <strong>Technologies:</strong> React, SpringBoot, SQL, WebSocket, JWT
+                    </div>
+                </li>
+                <li>
+                    <span class="project" onclick="toggleDetails('project4')">Student Grading Platform</span>
+                    <span class="highlight">Oct 2023 – Present</span>
+                    <div id="project4" class="details">
+                        <strong>Description:</strong> CLI-based comprehensive grading system implementing Dr. APJ Abdul Kalam University standards<br>
+                        <strong>Features:</strong> Automated SGPA calculation with grade point analysis and transcript generation<br>
+                        <strong>Technologies:</strong> Java Core, Data Structures & Algorithms, File I/O
+                    </div>
+                </li>
             </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="skill-item">
+                        <span>Java</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>TypeScript</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>SQL</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>C++</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Solidity</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Backend Technologies</h4>
+                    <div class="skill-item">
+                        <span>SpringBoot</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Node.js</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Express.js</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>RESTful APIs</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>WebSocket</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Frontend Technologies</h4>
+                    <div class="skill-item">
+                        <span>React</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>HTML</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>CSS</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <div class="skill-item">
+                        <span>MongoDB</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>MySQL</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Redis</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>DevOps & Tools</h4>
+                    <div class="skill-item">
+                        <span>Docker</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Jenkins</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>AWS</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Git</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>GitHub</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Bitbucket</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>ELK Stack</h4>
+                    <div class="skill-item">
+                        <span>Elasticsearch</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Logstash</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Kibana</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Grafana</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Prometheus</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Web3 & Blockchain</h4>
+                    <div class="skill-item">
+                        <span>Solana</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Web3</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Ethereum</span>
+                        <span class="skill-level">Basic</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Testing & Quality</h4>
+                    <div class="skill-item">
+                        <span>JUnit</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Mockito</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="section">
             <h2>Certifications</h2>
             <ul>
-                <li>Problem Solving (Intermediate) – HackerRank</li>
-                <li>Java SE 8 – Infosys Springboard</li>
-                <li>Introduction to Frontend – Meta</li>
-                <li>Getting Started with Java 11 – LinkedIn Learning</li>
-                <li>Programming Essentials in C++ – OpenEDG</li>
+                <li><strong>Problem Solving (Intermediate)</strong> – HackerRank</li>
+                <li><strong>Data Structure and Backend With Java</strong> – Board Infinity</li>
+                <li><strong>Programming Essentials in C++</strong> – OpenEDG</li>
+                <li><strong>Introduction to Frontend</strong> – Meta</li>
+                <li><strong>Getting Started with Java 11</strong> – LinkedIn Learning</li>
+                <li><strong>Java Basic</strong> – HackerRank</li>
+                <li><strong>Introduction to Cybersecurity</strong> – Cisco Networking Academy</li>
+                <li><strong>Introduction to Networks (CCNA)</strong> – Cisco Networking Academy</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Achievements</h2>
+            <h2>Achievements & Leadership</h2>
             <ul>
-                <li>Solved over 300+ problems on HackerRank and LeetCode.</li>
-                <li>Participated in multiple coding competitions.</li>
-                <li>ACM Core Member and Camp Coordinator at LDL NGO.</li>
+                <li><span class="highlight">Solved 900+ coding problems</span> on LeetCode and HackerRank with focus on algorithmic problem solving</li>
+                <li>Multiple technical certifications from industry leaders (HackerRank, Meta, Board Infinity)</li>
+                <li><strong>ACM Core Member:</strong> Active contributor to technical events and coding competitions</li>
+                <li><strong>Camp Coordinator, LDL NGO:</strong> Leading educational initiatives and community outreach programs</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Hobbies</h2>
-            <ul>
-                <li>Exploring Geopolitics, Teaching, and Problem-Solving Challenges.</li>
-            </ul>
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-section">
+                    <h4>Professional</h4>
+                    <p>Email: <a href="mailto:shikharpsingh1@gmail.com">shikharpsingh1@gmail.com</a></p>
+                    <p>Academic: <a href="mailto:shikhar.21b0121053@abes.ac.in">shikhar.21b0121053@abes.ac.in</a></p>
+                    <p>Phone: +91 9015061999</p>
+                </div>
+                <div class="contact-section">
+                    <h4>Online Presence</h4>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/shikhar-pratap-singh-09a9b322a/">Professional Profile</a></p>
+                    <p>GitHub: <a href="https://github.com/cratesium">Code Repository</a></p>
+                    <p>LeetCode: <a href="https://leetcode.com/cratesium">Problem Solving</a></p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
